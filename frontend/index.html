@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task manager</title>
+  <meta name="description" content="Un gestionnaire de tâches, pour vous aider au quotidien">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Task manager</h1>
+  </header>
+
+  <main>
+
+    <div class="create-task-container">
+      <button id="add-new-task">nouvelle tâche</button>
+    </div>
+
+    <template id="template-success-message">
+      <div class="message success">
+        <span>la nouvelle tâche a bien été ajoutée</span>
+        <span class="close">X</span>
+      </div>
+    </template>
+    
+    <div class="message danger" hidden>
+      <p>oops, impossible de sauvegarder la tâche</p>
+      <span class="close"> X </span>
+    </div>
+
+    <ul id="tasklist" class="tasklist">
+      <template id="taskElement">
+        <div class="idTask" id="">
+        <li data-id="1">
+          <p> </p><span class="tag"></span><span class="category"></span>
+          <div class="delete"></div>
+          <div class="edit"></div>
+        </li>
+        </div>
+      </template>
+    </ul>
+
+    <div class="modal-dialog">
+      <template id="taskForm">
+        <form id="">
+          <h2></h2>
+          <label for="task-title" class="screen-reader-only">titre de la tâche</label>
+          <input type="hidden" name="id" id="id">
+          <input name="title" id="task-title"  type="text" required>
+          <fieldset>
+          <label for="categoryList"> Catégorie de la tâche : </label>
+          <select name="category_id" id="categoryList">
+            <option value=""> Choisissez une catégorie </option>
+          </select>
+        </fieldset>
+          <fieldset>
+            <legend>Choisissez un ou plusieurs tags:</legend>     
+            <div class="input-checkbox">
+            </div> 
+          </fieldset>
+          <button>ajouter</button>
+        </form>
+      </template>
+    </div>
+
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
